@@ -12,7 +12,7 @@ Very important to Note, currently a primary key identity column `id` is added to
 
 Python 10 support only as use is made of the new match statement syntax
 
-Here is an example where Python code is generated for SQLAlchemy from the Swagger definitions.
+Here is an example where Python code is generated for SQLAlchemy from the Swagger definitions. (sqlacodegen>=3.0rc1)
 
 ```python
 import logging
