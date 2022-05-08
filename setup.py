@@ -6,7 +6,7 @@ from setuptools.dist import Distribution
 
 here = os.path.abspath(os.path.dirname(__file__))
 try:
-    with open(os.path.join(here, "README.rst")) as f:
+    with open(os.path.join(here, "README.md")) as f:
         README = f.read().replace("\r","")
 except IOError:
     README = ""
@@ -46,8 +46,8 @@ setup_kwargs = {
     "name": "swagger-dialect",
     "version": open("VERSION").read().strip(),
     "description": "Swagger definition SQLAlchemy reflection",
-    # "long_description": README + "\n\n" + CHANGES,
-    # "long_description_content_type": "text/x-rst",
+    "long_description": README + "\n\n" + CHANGES,
+    "long_description_content_type": "text/markdown",
     "python_requires": ">3.10.0",
     "classifiers": [
         "Development Status :: 3 - Alpha",
