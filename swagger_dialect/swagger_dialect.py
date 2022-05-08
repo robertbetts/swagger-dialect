@@ -77,7 +77,7 @@ class SwaggerDialect(DefaultDialect, ABC):
 
     @reflection.cache
     def get_table_names(self, connection, schema=None, **kw):
-        return connection.connection.get_table_names()
+        return connection.get_table_names()
 
     @reflection.cache
     def has_table(self, connection, table_name, schema=None, **kw):

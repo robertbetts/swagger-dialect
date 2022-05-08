@@ -31,7 +31,8 @@ class SwaggerDBAPI:
     def get_table_names(self):
         tables = []
         for definition, obj in self.schema["definitions"].items():
-            definition_type = obj.get("type")
+            # id type not set , then assume it is an object
+            definition_type = obj.get("type", "object")
             match definition_type:
                 case "object":
                     tables.append(definition)
