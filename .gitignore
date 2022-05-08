@@ -1,0 +1,4 @@
+/.idea/
+/swagger-dialect.iml
+/venv/
+/.pytest_cache/
