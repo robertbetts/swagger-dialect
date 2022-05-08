@@ -36,7 +36,8 @@ install_requires = [
 docs_extras = []
 
 tests_require = [
-    "pytest>=7.0.0"
+    "pytest>=7.0.0",
+    "sqlacodegen>=3.0rc1"
 ]
 
 testing_extras = tests_require + []
