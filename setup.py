@@ -2,6 +2,7 @@
 
 import os
 from setuptools import setup, find_packages
+from setuptools.dist import Distribution
 
 here = os.path.abspath(os.path.dirname(__file__))
 try:
@@ -25,6 +26,8 @@ from pip.req import parse_requirements
 install_requires =  parse_requirements(<requirements_path>)
 """
 
+
+
 install_requires = [
     "sqlalchemy>=1.4.0",
     "pyyaml>=6.0"
@@ -38,12 +41,13 @@ tests_require = [
 
 testing_extras = tests_require + []
 
-setup(
-    name="swagger-dialect",
-    version=open("VERSION").read().strip(),
-    description="Swagger SQLAlchemy dialect and DBAPI to Swagger YAML file",
-    long_description=README + "\n\n" + CHANGES,
-    classifiers=[
+setup_kwargs = {
+    "name": "swagger-dialect",
+    "version": open("VERSION").read().strip(),
+    "description": "Swagger SQLAlchemy dialect and DBAPI to Swagger YAML file",
+    "long_description": README + "\n\n" + CHANGES,
+    "python_requires": ">3.10.0",
+    "classifiers": [
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
@@ -55,16 +59,19 @@ setup(
         "Programming Language :: Python :: Implementation :: PyPy",
         "Topic :: Database :: Front-Ends",
     ],
-    keywords="import, physical address, file path",
-    author="robertbetts",
-    url="https://github.com/robertbetts/swagger-dialect",
-    packages=find_packages(),
-    include_package_data=True,
-    zip_safe=False,
-    install_requires=install_requires,
-    extras_require={"testing": testing_extras, "docs": docs_extras},
-    tests_require=tests_require,
-    test_suite="tests",
-    entry_points="""
-""",
-)
+    "keywords": "import, physical address, file path",
+    "author": "robertbetts",
+    "url": "https://github.com/robertbetts/swagger-dialect",
+    "packages": find_packages(),
+    "include_package_data": True,
+    "zip_safe": False,
+    "install_requires": install_requires,
+    "extras_require": {"testing": testing_extras, "docs": docs_extras},
+    "tests_require": tests_require,
+    "test_suite": "tests",
+    "entry_points": "",
+}
+
+setup(**setup_kwargs)
+
+
