@@ -2,3 +2,9 @@
 /swagger-dialect.iml
 /venv/
 /.pytest_cache/
+__pychache/
+/build/
+/dist/
+/swagger_dialect.egg-info/
+.coverage
+.cache
